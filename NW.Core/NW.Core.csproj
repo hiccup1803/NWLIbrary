@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AA9D564E-1EE5-4C45-ACCA-E1FACF1102A2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NW.Core</RootNamespace>
+    <AssemblyName>NW.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=2.1.0.4, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\WindowsAzure.Storage.2.1.0.4\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NHibernate.4.0.3.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contracts\Game\PlayGameResult.cs" />
+    <Compile Include="Contracts\Game\WinnerListResult.cs" />
+    <Compile Include="Contracts\GenericResult.cs" />
+    <Compile Include="Contracts\Member\BonusResult.cs" />
+    <Compile Include="Contracts\Member\FinancialInfoMemberBonusResult.cs" />
+    <Compile Include="Contracts\Member\FinancialInfoResult.cs" />
+    <Compile Include="Contracts\Member\ActivedBonusResult.cs" />
+    <Compile Include="Contracts\Payment\BalanceResult.cs" />
+    <Compile Include="Contracts\Payment\CashlinkAdditionalInfo.cs" />
+    <Compile Include="Contracts\Payment\BankTransferAdditionalInfo.cs" />
+    <Compile Include="Contracts\Payment\MefeteAdditionalInfo.cs" />
+    <Compile Include="Contracts\Payment\ParazulaAdditionalInfo.cs" />
+    <Compile Include="Contracts\Payment\PaparaResult.cs" />
+    <Compile Include="Contracts\Payment\PayfixAdditionalInfo.cs" />
+    <Compile Include="Contracts\Payment\PEPAdditionalInfo.cs" />
+    <Compile Include="Contracts\Payment\CryptoAdditionalInfo.cs" />
+    <Compile Include="Entities\BannerMemberReaction.cs" />
+    <Compile Include="Entities\DeviceFingerPrint.cs" />
+    <Compile Include="Entities\DittoCompany.cs" />
+    <Compile Include="Entities\DeviceFingerPrintWebhookHistory.cs" />
+    <Compile Include="Entities\DeviceFingerPrintWebhook.cs" />
+    <Compile Include="Entities\IPBlacklist.cs" />
+    <Compile Include="Entities\IPLoginLog.cs" />
+    <Compile Include="Entities\MemberDeviceFingerPrintHistory.cs" />
+    <Compile Include="Entities\MemberDeviceFingerPrint.cs" />
+    <Compile Include="Entities\MemberSegmentCronRunHistory.cs" />
+    <Compile Include="Entities\MemberSegmentMember.cs" />
+    <Compile Include="Entities\Payment\BankTransferV2Request.cs" />
+    <Compile Include="Entities\Payment\MefeteAccount.cs" />
+    <Compile Include="Entities\Payment\MefeteTransferMefeteAccount.cs" />
+    <Compile Include="Entities\Payment\MefeteTransferRequest.cs" />
+    <Compile Include="Entities\Payment\BankTransferV2BankTransferAccount.cs" />
+    <Compile Include="Entities\Payment\PaybinRequest.cs" />
+    <Compile Include="Entities\Payment\ParazulaAccount.cs" />
+    <Compile Include="Entities\Payment\ParazulaTransferParazulaAccount.cs" />
+    <Compile Include="Entities\Payment\ParazulaTransferRequest.cs" />
+    <Compile Include="Entities\Payment\PayfixAccount.cs" />
+    <Compile Include="Entities\Payment\PayfixPaymentProvider.cs" />
+    <Compile Include="Entities\Payment\PayfixTransferPayfixAccount.cs" />
+    <Compile Include="Entities\Payment\PayfixTransferRequest.cs" />
+    <Compile Include="Entities\Payment\PEPTransferRequest.cs" />
+    <Compile Include="Entities\Payment\PEPTransferPEPAccount.cs" />
+    <Compile Include="Entities\Payment\PEPAccount.cs" />
+    <Compile Include="Entities\Payment\HeetpayRequest.cs" />
+    <Compile Include="Entities\Payment\MGCreditCardRequest.cs" />
+    <Compile Include="Entities\Payment\NewPaymentProvider.cs" />
+    <Compile Include="Entities\Payment\QuickbitRequest.cs" />
+    <Compile Include="Enum\BetStatusType.cs" />
+    <Compile Include="Enum\ExecutionType.cs" />
+    <Compile Include="Enum\ImportType.cs" />
+    <Compile Include="Enum\MemberDeviceFingerPrintStatusType.cs" />
+    <Compile Include="Enum\ReactionType.cs" />
+    <Compile Include="Enum\UIActionType.cs" />
+    <Compile Include="Contracts\Payment\CryptoExchangePrice.cs" />
+    <Compile Include="Model\Finance\CepbankPaymentGenericViewModel.cs" />
+    <Compile Include="Model\Finance\CepbankPaymentModel.cs" />
+    <Compile Include="Model\Finance\DepositSummaryModel.cs" />
+    <Compile Include="Contracts\Payment\DepositResult.cs" />
+    <Compile Include="Contracts\Payment\CMTAdditionalInfo.cs" />
+    <Compile Include="Contracts\Payment\PaparaAdditionalInfo.cs" />
+    <Compile Include="Contracts\Payment\JetonAdditionalInfo.cs" />
+    <Compile Include="Contracts\Payment\EcoPayzAdditionalInfo.cs" />
+    <Compile Include="Contracts\Payment\AstropayAdditinalInfo.cs" />
+    <Compile Include="Contracts\Payment\JetonVoucherAdditinalInfo.cs" />
+    <Compile Include="Contracts\Payment\PaykasaAdditinalInfo.cs" />
+    <Compile Include="Contracts\Payment\WithdrawResult.cs" />
+    <Compile Include="Entities\AffiliateType.cs" />
+    <Compile Include="Entities\BackOffice\BackOfficeRole.cs" />
+    <Compile Include="Entities\FAQ.cs" />
+    <Compile Include="Entities\Banner.cs" />
+    <Compile Include="Entities\Campaign\ActionType.cs" />
+    <Compile Include="Entities\Campaign\EventCampaign.cs" />
+    <Compile Include="Entities\Campaign\EventCampaignHistory.cs" />
+    <Compile Include="Entities\Campaign\EventHistory.cs" />
+    <Compile Include="Entities\Campaign\EventType.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\CategoryTemplate.cs" />
+    <Compile Include="Entities\Company.cs" />
+    <Compile Include="Entities\CompanyBackOfficeDomain.cs" />
+    <Compile Include="Entities\Country.cs" />
+    <Compile Include="Entities\CountryExternalModel.cs" />
+    <Compile Include="Entities\CustomStuff.cs" />
+    <Compile Include="Entities\DepositBonusHistory.cs" />
+    <Compile Include="Entities\GameTag.cs" />
+    <Compile Include="Entities\Marketing\OptimoveTemplate.cs" />
+    <Compile Include="Entities\Marketing\Tournament.cs" />
+    <Compile Include="Entities\Marketing\TournamentGame.cs" />
+    <Compile Include="Entities\MemberPasscode.cs" />
+    <Compile Include="Entities\MemberLoginLogout.cs" />
+    <Compile Include="Entities\MemberTracking.cs" />
+    <Compile Include="Entities\Marketing\BannerAnnotation.cs" />
+    <Compile Include="Entities\Marketing\EmailAccount.cs" />
+    <Compile Include="Entities\GameDetail.cs" />
+    <Compile Include="Entities\Language.cs" />
+    <Compile Include="Entities\Level.cs" />
+    <Compile Include="Entities\LevelAttribute.cs" />
+    <Compile Include="Entities\Marketing\Annotation.cs" />
+    <Compile Include="Entities\Marketing\Campaign.cs" />
+    <Compile Include="Entities\Marketing\EmailQueue.cs" />
+    <Compile Include="Entities\Marketing\MarketingBanner.cs" />
+    <Compile Include="Entities\Marketing\MarketingBannerSize.cs" />
+    <Compile Include="Entities\Marketing\MarketingBannerSizeItem.cs" />
+    <Compile Include="Entities\Marketing\SMSTemplate.cs" />
+    <Compile Include="Entities\Marketing\Template.cs" />
+    <Compile Include="Entities\MemberLoginCode.cs" />
+    <Compile Include="Entities\MemberNotification.cs" />
+    <Compile Include="Entities\MemberCandidate.cs" />
+    <Compile Include="Entities\MemberDeviceToken.cs" />
+    <Compile Include="Entities\MemberConnection.cs" />
+    <Compile Include="Entities\MemberGameHistory.cs" />
+    <Compile Include="Entities\MemberPhoneVerification.cs" />
+    <Compile Include="Entities\MemberReport.cs" />
+    <Compile Include="Entities\MemberSegment.cs" />
+    <Compile Include="Entities\MemberTag.cs" />
+    <Compile Include="Entities\MemberTagFilter.cs" />
+    <Compile Include="Entities\MessageTopic.cs" />
+    <Compile Include="Entities\PagingModel.cs" />
+    <Compile Include="Entities\Payment\AstroPayRequest.cs" />
+    <Compile Include="Entities\Payment\Bank.cs" />
+    <Compile Include="Entities\Payment\BankAccount.cs" />
+    <Compile Include="Entities\Payment\BankTransferBankAccount.cs" />
+    <Compile Include="Entities\Payment\BankTransferRequestProviderHistory.cs" />
+    <Compile Include="Entities\Payment\GenericDepositRequest.cs" />
+    <Compile Include="Entities\Payment\NewBankTransferRequest.cs" />
+    <Compile Include="Entities\Payment\CMTAccount.cs" />
+    <Compile Include="Entities\Payment\CMTTransferCMTAccount.cs" />
+    <Compile Include="Entities\Payment\CMTTransferRequest.cs" />
+    <Compile Include="Entities\Payment\PaparaTransferRequest.cs" />
+    <Compile Include="Entities\Payment\BankTransferRequest.cs" />
+    <Compile Include="Entities\Payment\BPCPaymentMethodType.cs" />
+    <Compile Include="Entities\Payment\CubitsRequest.cs" />
+    <Compile Include="Entities\Payment\BPCRequest.cs" />
+    <Compile Include="Entities\Payment\CashlinkRequest.cs" />
+    <Compile Include="Entities\Payment\CepBank.cs" />
+    <Compile Include="Entities\Payment\CepBankRequest.cs" />
+    <Compile Include="Entities\Payment\CreditCardResponse.cs" />
+    <Compile Include="Entities\Payment\CreditCardRequest.cs" />
+    <Compile Include="Entities\Payment\CreditCard.cs" />
+    <Compile Include="Entities\ContentPage.cs" />
+    <Compile Include="Entities\CompanySetting.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\Game.cs" />
+    <Compile Include="Entities\GameCategory.cs" />
+    <Compile Include="Entities\IEntity.cs" />
+    <Compile Include="Entities\Member.cs" />
+    <Compile Include="Entities\MemberDetail.cs" />
+    <Compile Include="Entities\CompanyDomain.cs" />
+    <Compile Include="Entities\Payment\CurrencyUpdate.cs" />
+    <Compile Include="Entities\Payment\Currency.cs" />
+    <Compile Include="Entities\Payment\CurrencyRate.cs" />
+    <Compile Include="Entities\Payment\EcoPayzRequest.cs" />
+    <Compile Include="Entities\Payment\JetRequest.cs" />
+    <Compile Include="Entities\Payment\KingCommunityBankTransferRequest.cs" />
+    <Compile Include="Entities\Payment\KingQRDepositRequest.cs" />
+    <Compile Include="Entities\Payment\MemberDisabledPaymentMethod.cs" />
+    <Compile Include="Entities\Payment\OtoPayTransaction.cs" />
+    <Compile Include="Entities\Payment\PaparaAccount.cs" />
+    <Compile Include="Entities\Payment\PaparaTransferPaparaAccount.cs" />
+    <Compile Include="Entities\Payment\PayKasaTransaction.cs" />
+    <Compile Include="Entities\Payment\PaymentStatusType.cs" />
+    <Compile Include="Entities\Payment\PayminoRequest.cs" />
+    <Compile Include="Entities\Payment\PaymentProvider.cs" />
+    <Compile Include="Entities\Payment\PaylinkRequest.cs" />
+    <Compile Include="Entities\Payment\PayminoRequest2.cs" />
+    <Compile Include="Entities\Payment\RejectedBin.cs" />
+    <Compile Include="Entities\Payment\ReyPayCMTRequest.cs" />
+    <Compile Include="Entities\Payment\WithdrawRequestBankTransfer.cs" />
+    <Compile Include="Entities\BackOffice\PowerUser.cs" />
+    <Compile Include="Entities\Promotion.cs" />
+    <Compile Include="Entities\Provider.cs" />
+    <Compile Include="Entities\ProviderSetting.cs" />
+    <Compile Include="Entities\ProviderType.cs" />
+    <Compile Include="Entities\Report\AffiliateSummaryReport.cs" />
+    <Compile Include="Entities\Report\MemberSummaryReport.cs" />
+    <Compile Include="Entities\Resource.cs" />
+    <Compile Include="Entities\Tag.cs" />
+    <Compile Include="Entities\Track.cs" />
+    <Compile Include="Entities\Transaction.cs" />
+    <Compile Include="Entities\Winner.cs" />
+    <Compile Include="Entities\Withdraw.cs" />
+    <Compile Include="Enum\ActionType.cs" />
+    <Compile Include="Enum\BannerPlace.cs" />
+    <Compile Include="Enum\BannerType.cs" />
+    <Compile Include="Enum\BannerUsernameFilterType.cs" />
+    <Compile Include="Enum\CampaignUserRestrictionType.cs" />
+    <Compile Include="Enum\EmailType.cs" />
+    <Compile Include="Enum\EventCampaignPrizeType.cs" />
+    <Compile Include="Enum\FreespinStatusType.cs" />
+    <Compile Include="Enum\KycDocumentType.cs" />
+    <Compile Include="Enum\KycStatusType.cs" />
+    <Compile Include="Enum\MessageType.cs" />
+    <Compile Include="Enum\ProcessStatusType.cs" />
+    <Compile Include="Enum\PromotionType.cs" />
+    <Compile Include="Enum\StatusType.cs" />
+    <Compile Include="Enum\TemplateType.cs" />
+    <Compile Include="Enum\TournamentType.cs" />
+    <Compile Include="Enum\TransferWayType.cs" />
+    <Compile Include="Enum\WithdrawStatusType.cs" />
+    <Compile Include="Entities\Message.cs" />
+    <Compile Include="Entities\MessageTemplate.cs" />
+    <Compile Include="Model\AuthenticationResultModel.cs" />
+    <Compile Include="Model\ExcelTableEntityModel.cs" />
+    <Compile Include="Model\Finance\BankModel.cs" />
+    <Compile Include="Model\Finance\BankTransferBankAccountModel.cs" />
+    <Compile Include="Model\Finance\PaparaPaymentModel.cs" />
+    <Compile Include="Model\Finance\PaparaTransferPaparaAccountModel.cs" />
+    <Compile Include="Model\GamePagingListModel.cs" />
+    <Compile Include="Model\Game\CategoryModel.cs" />
+    <Compile Include="Model\Game\CategoryTemplateModel.cs" />
+    <Compile Include="Model\Game\GameModel.cs" />
+    <Compile Include="Model\KafkaModel\DepositFailedKafkaModel.cs" />
+    <Compile Include="Model\KafkaModel\DepositStartedKafkaModel.cs" />
+    <Compile Include="Model\KafkaModel\LoginFailedKafkaModel.cs" />
+    <Compile Include="Model\Marketing\MarketingBannerJsonModel.cs" />
+    <Compile Include="Model\Payments\BankTransferRequestModel.cs" />
+    <Compile Include="Model\ResultModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ICategoryRepository.cs" />
+    <Compile Include="Repositories\IDeviceFingerPrintRepository.cs" />
+    <Compile Include="Repositories\IMemberDeviceFingerPrintRepository.cs" />
+    <Compile Include="Repositories\IProviderSettingRepository.cs" />
+    <Compile Include="Repositories\IEmailAccountRepository.cs" />
+    <Compile Include="Repositories\IFAQRepository.cs" />
+    <Compile Include="Repositories\ILevelRepository.cs" />
+    <Compile Include="Repositories\Payment\ICreditCardResponseRepository.cs" />
+    <Compile Include="Repositories\Payment\ICreditCardRequestRepository.cs" />
+    <Compile Include="Repositories\Payment\ICreditCardRepository.cs" />
+    <Compile Include="Repositories\ICompanyDomainRepository.cs" />
+    <Compile Include="Repositories\IContentPageRepository.cs" />
+    <Compile Include="Repositories\ICompanySettingRepository.cs" />
+    <Compile Include="Repositories\IGameCategoryRepository.cs" />
+    <Compile Include="Repositories\IGameRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\IMemberDetailRepository.cs" />
+    <Compile Include="Repositories\IMemberRepository.cs" />
+    <Compile Include="Repositories\Promotion\IPromotionRepository.cs" />
+    <Compile Include="Services\IAffiliateService.cs" />
+    <Compile Include="Services\IAzureStorageService.cs" />
+    <Compile Include="Services\IBannerService.cs" />
+    <Compile Include="Services\ICacheService.cs" />
+    <Compile Include="Services\ICategoryService.cs" />
+    <Compile Include="Services\ICompanyService.cs" />
+    <Compile Include="Services\IProviderService.cs" />
+    <Compile Include="Services\ICompanySettingService.cs" />
+    <Compile Include="Services\IContentPageService.cs" />
+    <Compile Include="Services\IFAQService.cs" />
+    <Compile Include="Services\IFileService.cs" />
+    <Compile Include="Services\IGameService.cs" />
+    <Compile Include="Services\ILanguageService.cs" />
+    <Compile Include="Services\IMemberSegmentService.cs" />
+    <Compile Include="Services\IMemberService.cs" />
+    <Compile Include="Services\IMessageService.cs" />
+    <Compile Include="Services\ITagService.cs" />
+    <Compile Include="Services\ITrackService.cs" />
+    <Compile Include="Services\Marketing\IEventCampaignService.cs" />
+    <Compile Include="Services\Marketing\IMailingProcessService.cs" />
+    <Compile Include="Services\Marketing\IMarketingBannerService.cs" />
+    <Compile Include="Services\Marketing\IMarketingService.cs" />
+    <Compile Include="Services\Marketing\ITournamentService.cs" />
+    <Compile Include="Services\Payment\ICepbankPaymentService.cs" />
+    <Compile Include="Services\Payment\ICepBankService.cs" />
+    <Compile Include="Services\Payment\ICreditCardRequestService.cs" />
+    <Compile Include="Services\Payment\ICreditCardResponseService.cs" />
+    <Compile Include="Services\Payment\ICreditCardService.cs" />
+    <Compile Include="Services\Payment\IPayfixPaymentService.cs" />
+    <Compile Include="Services\Payment\IPaparaPaymentService.cs" />
+    <Compile Include="Services\Payment\IPaymentService.cs" />
+    <Compile Include="Services\IMemberSegmentContainerService.cs" />
+    <Compile Include="Services\Payment\IWithdrawContainerService.cs" />
+    <Compile Include="Services\Promotion\IpromotionService.cs" />
+    <Compile Include="Work\IUnitOfWork.cs" />
+    <Compile Include="Work\UnitOfWorkAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

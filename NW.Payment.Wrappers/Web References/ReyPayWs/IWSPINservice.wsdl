@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="IWSPINservice" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types />
+  <message name="NewCustomer0Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="name" type="xs:string" />
+    <part name="surname" type="xs:string" />
+    <part name="mail" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="date_day" type="xs:string" />
+    <part name="date_month" type="xs:string" />
+    <part name="date_year" type="xs:string" />
+    <part name="country" type="xs:string" />
+    <part name="city" type="xs:string" />
+    <part name="zipcode" type="xs:string" />
+    <part name="adress" type="xs:string" />
+    <part name="phone" type="xs:string" />
+    <part name="identity" type="xs:string" />
+  </message>
+  <message name="NewCustomer0Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetPayment1Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="card_number1" type="xs:string" />
+    <part name="card_number2" type="xs:string" />
+    <part name="card_number3" type="xs:string" />
+    <part name="card_number4" type="xs:string" />
+    <part name="card_month" type="xs:string" />
+    <part name="card_year" type="xs:string" />
+    <part name="card_security" type="xs:string" />
+    <part name="card_name" type="xs:string" />
+    <part name="card_type" type="xs:string" />
+    <part name="ip" type="xs:string" />
+    <part name="price" type="xs:double" />
+  </message>
+  <message name="GetPayment1Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetPaymentNew2Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="card_number1" type="xs:string" />
+    <part name="card_number2" type="xs:string" />
+    <part name="card_number3" type="xs:string" />
+    <part name="card_number4" type="xs:string" />
+    <part name="card_month" type="xs:string" />
+    <part name="card_year" type="xs:string" />
+    <part name="card_security" type="xs:string" />
+    <part name="card_name" type="xs:string" />
+    <part name="card_type" type="xs:string" />
+    <part name="ip" type="xs:string" />
+    <part name="price" type="xs:double" />
+    <part name="pos_dealer" type="xs:string" />
+    <part name="pos_submerchant" type="xs:string" />
+    <part name="customerref" type="xs:string" />
+  </message>
+  <message name="GetPaymentNew2Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="SmsStatus3Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+  </message>
+  <message name="SmsStatus3Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetSms4Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+    <part name="sms" type="xs:string" />
+  </message>
+  <message name="GetSms4Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="PaymentStatus5Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+  </message>
+  <message name="PaymentStatus5Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="PaymentCheck6Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+  </message>
+  <message name="PaymentCheck6Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="PaymentCheckCall7Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+  </message>
+  <message name="PaymentCheckCall7Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="PaymentList8Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="datevalue" type="xs:string" />
+  </message>
+  <message name="PaymentList8Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetPayBack9Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+  </message>
+  <message name="GetPayBack9Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="PayBackStatus10Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+  </message>
+  <message name="PayBackStatus10Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="PaymentEndDay11Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="datevalue" type="xs:string" />
+  </message>
+  <message name="PaymentEndDay11Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="CustomerDetail12Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="customerid" type="xs:string" />
+  </message>
+  <message name="CustomerDetail12Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="LinkPaymentCall13Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+    <part name="price" type="xs:double" />
+    <part name="failurl" type="xs:string" />
+    <part name="successurl" type="xs:string" />
+  </message>
+  <message name="LinkPaymentCall13Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="LinkGetPayment14Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="card_number1" type="xs:string" />
+    <part name="card_number2" type="xs:string" />
+    <part name="card_number3" type="xs:string" />
+    <part name="card_number4" type="xs:string" />
+    <part name="card_month" type="xs:string" />
+    <part name="card_year" type="xs:string" />
+    <part name="card_security" type="xs:string" />
+    <part name="card_name" type="xs:string" />
+    <part name="card_type" type="xs:string" />
+    <part name="ip" type="xs:string" />
+    <part name="price" type="xs:double" />
+    <part name="returnid" type="xs:string" />
+  </message>
+  <message name="LinkGetPayment14Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="LinkPaymentCheck15Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+  </message>
+  <message name="LinkPaymentCheck15Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="PaymentCall16Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+    <part name="price" type="xs:double" />
+    <part name="failurl" type="xs:string" />
+    <part name="successurl" type="xs:string" />
+  </message>
+  <message name="PaymentCall16Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetPaymentCall17Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="card_number1" type="xs:string" />
+    <part name="card_number2" type="xs:string" />
+    <part name="card_number3" type="xs:string" />
+    <part name="card_number4" type="xs:string" />
+    <part name="card_month" type="xs:string" />
+    <part name="card_year" type="xs:string" />
+    <part name="card_security" type="xs:string" />
+    <part name="card_name" type="xs:string" />
+    <part name="card_type" type="xs:string" />
+    <part name="ip" type="xs:string" />
+    <part name="price" type="xs:double" />
+    <part name="returnid" type="xs:string" />
+  </message>
+  <message name="GetPaymentCall17Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="SmsStatusCall18Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+  </message>
+  <message name="SmsStatusCall18Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetSmsCall19Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+    <part name="sms" type="xs:string" />
+  </message>
+  <message name="GetSmsCall19Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="PaymentStatusCall20Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+  </message>
+  <message name="PaymentStatusCall20Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="ReturnIdCheckCall21Request">
+    <part name="returnid" type="xs:string" />
+  </message>
+  <message name="ReturnIdCheckCall21Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="SmsTimeOutCall22Request">
+    <part name="referencecode" type="xs:string" />
+  </message>
+  <message name="SmsTimeOutCall22Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="PostOkeyCall23Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="customerref" type="xs:string" />
+  </message>
+  <message name="PostOkeyCall23Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="PostOkeyCallNew24Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="customerref" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+  </message>
+  <message name="PostOkeyCallNew24Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="ApiKeyDetail25Request">
+    <part name="apikey" type="xs:string" />
+  </message>
+  <message name="ApiKeyDetail25Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="Wallet_GetPaymentPayIn26Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="ip" type="xs:string" />
+    <part name="price" type="xs:double" />
+    <part name="success_url" type="xs:string" />
+    <part name="fail_url" type="xs:string" />
+    <part name="return_url" type="xs:string" />
+    <part name="customerref" type="xs:string" />
+    <part name="wallet_type" type="xs:string" />
+  </message>
+  <message name="Wallet_GetPaymentPayIn26Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="Wallet_PaymentStatusPayIn27Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+    <part name="customerref" type="xs:string" />
+  </message>
+  <message name="Wallet_PaymentStatusPayIn27Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="Wallet_Check28Request">
+    <part name="referencecode" type="xs:string" />
+  </message>
+  <message name="Wallet_Check28Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="Wallet_GetLogin29Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+    <part name="walletuser" type="xs:string" />
+    <part name="walletpass" type="xs:string" />
+    <part name="captcha" type="xs:string" />
+  </message>
+  <message name="Wallet_GetLogin29Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="Wallet_GetDetail30Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+    <part name="otpsmscode" type="xs:string" />
+    <part name="token" type="xs:string" />
+    <part name="walletcode" type="xs:string" />
+    <part name="walletcodeid" type="xs:string" />
+    <part name="name_surname" type="xs:string" />
+    <part name="walletbakiye" type="xs:double" />
+  </message>
+  <message name="Wallet_GetDetail30Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="Wallet_GetResult31Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+    <part name="ref_id" type="xs:string" />
+    <part name="result_code" type="xs:string" />
+    <part name="error_code" type="xs:string" />
+    <part name="error_message" type="xs:string" />
+  </message>
+  <message name="Wallet_GetResult31Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="Wallet_GetPaymentPayOut32Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="walletnumber" type="xs:string" />
+    <part name="ip" type="xs:string" />
+    <part name="price" type="xs:double" />
+    <part name="return_url" type="xs:string" />
+    <part name="customerref" type="xs:string" />
+    <part name="wallet_type" type="xs:string" />
+  </message>
+  <message name="Wallet_GetPaymentPayOut32Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="Wallet_PaymentStatusPayOut33Request">
+    <part name="wsuser" type="xs:string" />
+    <part name="wspass" type="xs:string" />
+    <part name="apikey" type="xs:string" />
+    <part name="username" type="xs:string" />
+    <part name="password" type="xs:string" />
+    <part name="referencecode" type="xs:string" />
+    <part name="customerref" type="xs:string" />
+  </message>
+  <message name="Wallet_PaymentStatusPayOut33Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <portType name="IWSPIN">
+    <operation name="NewCustomer">
+      <input message="tns:NewCustomer0Request" />
+      <output message="tns:NewCustomer0Response" />
+    </operation>
+    <operation name="GetPayment">
+      <input message="tns:GetPayment1Request" />
+      <output message="tns:GetPayment1Response" />
+    </operation>
+    <operation name="GetPaymentNew">
+      <input message="tns:GetPaymentNew2Request" />
+      <output message="tns:GetPaymentNew2Response" />
+    </operation>
+    <operation name="SmsStatus">
+      <input message="tns:SmsStatus3Request" />
+      <output message="tns:SmsStatus3Response" />
+    </operation>
+    <operation name="GetSms">
+      <input message="tns:GetSms4Request" />
+      <output message="tns:GetSms4Response" />
+    </operation>
+    <operation name="PaymentStatus">
+      <input message="tns:PaymentStatus5Request" />
+      <output message="tns:PaymentStatus5Response" />
+    </operation>
+    <operation name="PaymentCheck">
+      <input message="tns:PaymentCheck6Request" />
+      <output message="tns:PaymentCheck6Response" />
+    </operation>
+    <operation name="PaymentCheckCall">
+      <input message="tns:PaymentCheckCall7Request" />
+      <output message="tns:PaymentCheckCall7Response" />
+    </operation>
+    <operation name="PaymentList">
+      <input message="tns:PaymentList8Request" />
+      <output message="tns:PaymentList8Response" />
+    </operation>
+    <operation name="GetPayBack">
+      <input message="tns:GetPayBack9Request" />
+      <output message="tns:GetPayBack9Response" />
+    </operation>
+    <operation name="PayBackStatus">
+      <input message="tns:PayBackStatus10Request" />
+      <output message="tns:PayBackStatus10Response" />
+    </operation>
+    <operation name="PaymentEndDay">
+      <input message="tns:PaymentEndDay11Request" />
+      <output message="tns:PaymentEndDay11Response" />
+    </operation>
+    <operation name="CustomerDetail">
+      <input message="tns:CustomerDetail12Request" />
+      <output message="tns:CustomerDetail12Response" />
+    </operation>
+    <operation name="LinkPaymentCall">
+      <input message="tns:LinkPaymentCall13Request" />
+      <output message="tns:LinkPaymentCall13Response" />
+    </operation>
+    <operation name="LinkGetPayment">
+      <input message="tns:LinkGetPayment14Request" />
+      <output message="tns:LinkGetPayment14Response" />
+    </operation>
+    <operation name="LinkPaymentCheck">
+      <input message="tns:LinkPaymentCheck15Request" />
+      <output message="tns:LinkPaymentCheck15Response" />
+    </operation>
+    <operation name="PaymentCall">
+      <input message="tns:PaymentCall16Request" />
+      <output message="tns:PaymentCall16Response" />
+    </operation>
+    <operation name="GetPaymentCall">
+      <input message="tns:GetPaymentCall17Request" />
+      <output message="tns:GetPaymentCall17Response" />
+    </operation>
+    <operation name="SmsStatusCall">
+      <input message="tns:SmsStatusCall18Request" />
+      <output message="tns:SmsStatusCall18Response" />
+    </operation>
+    <operation name="GetSmsCall">
+      <input message="tns:GetSmsCall19Request" />
+      <output message="tns:GetSmsCall19Response" />
+    </operation>
+    <operation name="PaymentStatusCall">
+      <input message="tns:PaymentStatusCall20Request" />
+      <output message="tns:PaymentStatusCall20Response" />
+    </operation>
+    <operation name="ReturnIdCheckCall">
+      <input message="tns:ReturnIdCheckCall21Request" />
+      <output message="tns:ReturnIdCheckCall21Response" />
+    </operation>
+    <operation name="SmsTimeOutCall">
+      <input message="tns:SmsTimeOutCall22Request" />
+      <output message="tns:SmsTimeOutCall22Response" />
+    </operation>
+    <operation name="PostOkeyCall">
+      <input message="tns:PostOkeyCall23Request" />
+      <output message="tns:PostOkeyCall23Response" />
+    </operation>
+    <operation name="PostOkeyCallNew">
+      <input message="tns:PostOkeyCallNew24Request" />
+      <output message="tns:PostOkeyCallNew24Response" />
+    </operation>
+    <operation name="ApiKeyDetail">
+      <input message="tns:ApiKeyDetail25Request" />
+      <output message="tns:ApiKeyDetail25Response" />
+    </operation>
+    <operation name="Wallet_GetPaymentPayIn">
+      <input message="tns:Wallet_GetPaymentPayIn26Request" />
+      <output message="tns:Wallet_GetPaymentPayIn26Response" />
+    </operation>
+    <operation name="Wallet_PaymentStatusPayIn">
+      <input message="tns:Wallet_PaymentStatusPayIn27Request" />
+      <output message="tns:Wallet_PaymentStatusPayIn27Response" />
+    </operation>
+    <operation name="Wallet_Check">
+      <input message="tns:Wallet_Check28Request" />
+      <output message="tns:Wallet_Check28Response" />
+    </operation>
+    <operation name="Wallet_GetLogin">
+      <input message="tns:Wallet_GetLogin29Request" />
+      <output message="tns:Wallet_GetLogin29Response" />
+    </operation>
+    <operation name="Wallet_GetDetail">
+      <input message="tns:Wallet_GetDetail30Request" />
+      <output message="tns:Wallet_GetDetail30Response" />
+    </operation>
+    <operation name="Wallet_GetResult">
+      <input message="tns:Wallet_GetResult31Request" />
+      <output message="tns:Wallet_GetResult31Response" />
+    </operation>
+    <operation name="Wallet_GetPaymentPayOut">
+      <input message="tns:Wallet_GetPaymentPayOut32Request" />
+      <output message="tns:Wallet_GetPaymentPayOut32Response" />
+    </operation>
+    <operation name="Wallet_PaymentStatusPayOut">
+      <input message="tns:Wallet_PaymentStatusPayOut33Request" />
+      <output message="tns:Wallet_PaymentStatusPayOut33Response" />
+    </operation>
+  </portType>
+  <binding name="IWSPINbinding" type="tns:IWSPIN">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="NewCustomer">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#NewCustomer" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetPayment">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#GetPayment" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetPaymentNew">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#GetPaymentNew" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="SmsStatus">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#SmsStatus" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetSms">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#GetSms" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="PaymentStatus">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#PaymentStatus" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="PaymentCheck">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#PaymentCheck" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="PaymentCheckCall">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#PaymentCheckCall" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="PaymentList">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#PaymentList" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetPayBack">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#GetPayBack" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="PayBackStatus">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#PayBackStatus" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="PaymentEndDay">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#PaymentEndDay" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="CustomerDetail">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#CustomerDetail" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="LinkPaymentCall">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#LinkPaymentCall" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="LinkGetPayment">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#LinkGetPayment" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="LinkPaymentCheck">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#LinkPaymentCheck" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="PaymentCall">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#PaymentCall" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetPaymentCall">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#GetPaymentCall" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="SmsStatusCall">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#SmsStatusCall" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetSmsCall">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#GetSmsCall" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="PaymentStatusCall">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#PaymentStatusCall" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ReturnIdCheckCall">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#ReturnIdCheckCall" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="SmsTimeOutCall">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#SmsTimeOutCall" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="PostOkeyCall">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#PostOkeyCall" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="PostOkeyCallNew">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#PostOkeyCallNew" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ApiKeyDetail">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#ApiKeyDetail" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="Wallet_GetPaymentPayIn">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#Wallet_GetPaymentPayIn" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="Wallet_PaymentStatusPayIn">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#Wallet_PaymentStatusPayIn" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="Wallet_Check">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#Wallet_Check" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="Wallet_GetLogin">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#Wallet_GetLogin" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="Wallet_GetDetail">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#Wallet_GetDetail" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="Wallet_GetResult">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#Wallet_GetResult" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="Wallet_GetPaymentPayOut">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#Wallet_GetPaymentPayOut" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="Wallet_PaymentStatusPayOut">
+      <soap:operation soapAction="urn:WSPINIntf-IWSPIN#Wallet_PaymentStatusPayOut" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WSPINIntf-IWSPIN" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="IWSPINservice">
+    <port name="IWSPINPort" binding="tns:IWSPINbinding">
+      <soap:address location="http://185.190.16.93:8080/myappsamir/WSPIN.dll/soap/IWSPIN" />
+    </port>
+  </service>
+</definitions>

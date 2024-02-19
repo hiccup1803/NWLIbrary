@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="CreateWithdrawal_onlyBlokesizHavale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ent" type="tns:ent_WithdrawalAdding" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ent_WithdrawalAdding">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="user_login_username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="user_full_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IBAN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TCNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="bank_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="transactionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="birthday" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hesap_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sube_kodu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tc_yakini" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="kimlik_tarih" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateWithdrawal_onlyBlokesizHavaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateWithdrawal_onlyBlokesizHavaleResult" type="tns:ent_RETURN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ent_RETURN">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transactionID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FirmCredentials" type="tns:FirmCredentials" />
+      <s:complexType name="FirmCredentials">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FirmKey" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecretKey" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="CreateWithdrawal_onlyHizliPapara">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ent" type="tns:ent_WithdrawalAdding_HizliPapara" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ent_WithdrawalAdding_HizliPapara">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="user_login_username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="user_full_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaparaNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TCNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="transactionID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateWithdrawal_onlyHizliPaparaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateWithdrawal_onlyHizliPaparaResult" type="tns:ent_RETURN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGroupList">
+        <s:complexType />
+      </s:element>
+      <s:element name="getGroupListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getGroupListResult" type="tns:ArrayOfEnt_LIST" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEnt_LIST">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ent_LIST" nillable="true" type="tns:ent_LIST" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ent_LIST">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getBankList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="group_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBankListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBankListResult" type="tns:ArrayOfEnt_LIST" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getWithdrawalStatus">
+        <s:complexType />
+      </s:element>
+      <s:element name="getWithdrawalStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getWithdrawalStatusResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getDepositStatus">
+        <s:complexType />
+      </s:element>
+      <s:element name="getDepositStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDepositStatusResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDepositLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="group_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_login_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_full_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDepositLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateDepositLinkResult" type="tns:ent_RETURN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDepositLink_Pos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_login_username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ExpireMonth" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ExpireYear" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardOwner" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CVV" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDepositLink_PosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateDepositLink_PosResult" type="tns:ent_RETURN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCompletedWithdrawals">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckCompletedWithdrawalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckCompletedWithdrawalsResult" type="tns:ArrayOfEnt_Withdrawal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEnt_Withdrawal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ent_Withdrawal" nillable="true" type="tns:ent_Withdrawal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ent_Withdrawal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="transactionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="user_login_username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="user_full_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TCNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IBAN" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="created_date" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="completed_date" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status_detail" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="group_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="bank_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="bank_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="group_name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckWithdrawalResult_byTransactionID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transactionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckWithdrawalResult_byTransactionIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckWithdrawalResult_byTransactionIDResult" type="tns:ent_Withdrawal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompleteWithdrawals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transactionIDs" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompleteWithdrawalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompleteWithdrawalsResult" type="tns:ArrayOfEnt_RETURN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEnt_RETURN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ent_RETURN" nillable="true" type="tns:ent_RETURN" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DisableWithdrawals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transactionIDs" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableWithdrawalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisableWithdrawalsResult" type="tns:ArrayOfEnt_RETURN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCompletedDeposits">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckCompletedDepositsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckCompletedDepositsResult" type="tns:ArrayOfEnt_Deposit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEnt_Deposit">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ent_Deposit" nillable="true" type="tns:ent_Deposit" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ent_Deposit">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="transactionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="user_login_username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="user_full_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="created_date" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="completed_date" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status_detail" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="group_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="bank_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="bank_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="group_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="actionGuid" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CompleteDeposits">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transactionIDs" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompleteDepositsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompleteDepositsResult" type="tns:ArrayOfEnt_RETURN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDepositResult_byTransactionID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transactionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDepositResult_byTransactionIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckDepositResult_byTransactionIDResult" type="tns:ent_Deposit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateWithdrawal_onlyBlokesizHavaleSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateWithdrawal_onlyBlokesizHavale" />
+  </wsdl:message>
+  <wsdl:message name="CreateWithdrawal_onlyBlokesizHavaleSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateWithdrawal_onlyBlokesizHavaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateWithdrawal_onlyBlokesizHavaleFirmCredentials">
+    <wsdl:part name="FirmCredentials" element="tns:FirmCredentials" />
+  </wsdl:message>
+  <wsdl:message name="CreateWithdrawal_onlyHizliPaparaSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateWithdrawal_onlyHizliPapara" />
+  </wsdl:message>
+  <wsdl:message name="CreateWithdrawal_onlyHizliPaparaSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateWithdrawal_onlyHizliPaparaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateWithdrawal_onlyHizliPaparaFirmCredentials">
+    <wsdl:part name="FirmCredentials" element="tns:FirmCredentials" />
+  </wsdl:message>
+  <wsdl:message name="getGroupListSoapIn">
+    <wsdl:part name="parameters" element="tns:getGroupList" />
+  </wsdl:message>
+  <wsdl:message name="getGroupListSoapOut">
+    <wsdl:part name="parameters" element="tns:getGroupListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getGroupListFirmCredentials">
+    <wsdl:part name="FirmCredentials" element="tns:FirmCredentials" />
+  </wsdl:message>
+  <wsdl:message name="getBankListSoapIn">
+    <wsdl:part name="parameters" element="tns:getBankList" />
+  </wsdl:message>
+  <wsdl:message name="getBankListSoapOut">
+    <wsdl:part name="parameters" element="tns:getBankListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBankListFirmCredentials">
+    <wsdl:part name="FirmCredentials" element="tns:FirmCredentials" />
+  </wsdl:message>
+  <wsdl:message name="getWithdrawalStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:getWithdrawalStatus" />
+  </wsdl:message>
+  <wsdl:message name="getWithdrawalStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:getWithdrawalStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="getWithdrawalStatusFirmCredentials">
+    <wsdl:part name="FirmCredentials" element="tns:FirmCredentials" />
+  </wsdl:message>
+  <wsdl:message name="getDepositStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:getDepositStatus" />
+  </wsdl:message>
+  <wsdl:message name="getDepositStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:getDepositStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDepositStatusFirmCredentials">
+    <wsdl:part name="FirmCredentials" element="tns:FirmCredentials" />
+  </wsdl:message>
+  <wsdl:message name="CreateDepositLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateDepositLink" />
+  </wsdl:message>
+  <wsdl:message name="CreateDepositLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateDepositLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDepositLinkFirmCredentials">
+    <wsdl:part name="FirmCredentials" element="tns:FirmCredentials" />
+  </wsdl:message>
+  <wsdl:message name="CreateDepositLink_PosSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateDepositLink_Pos" />
+  </wsdl:message>
+  <wsdl:message name="CreateDepositLink_PosSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateDepositLink_PosResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDepositLink_PosFirmCredentials">
+    <wsdl:part name="FirmCredentials" element="tns:FirmCredentials" />
+  </wsdl:message>
+  <wsdl:message name="CheckCompletedWithdrawalsSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckCompletedWithdrawals" />
+  </wsdl:message>
+  <wsdl:message name="CheckCompletedWithdrawalsSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckCompletedWithdrawalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckCompletedWithdrawalsFirmCredentials">
+    <wsdl:part name="FirmCredentials" element="tns:FirmCredentials" />
+  </wsdl:message>
+  <wsdl:message name="CheckWithdrawalResult_byTransactionIDSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckWithdrawalResult_byTransactionID" />
+  </wsdl:message>
+  <wsdl:message name="CheckWithdrawalResult_byTransactionIDSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckWithdrawalResult_byTransactionIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckWithdrawalResult_byTransactionIDFirmCredentials">
+    <wsdl:part name="FirmCredentials" element="tns:FirmCredentials" />
+  </wsdl:message>
+  <wsdl:message name="CompleteWithdrawalsSoapIn">
+    <wsdl:part name="parameters" element="tns:CompleteWithdrawals" />
+  </wsdl:message>
+  <wsdl:message name="CompleteWithdrawalsSoapOut">
+    <wsdl:part name="parameters" element="tns:CompleteWithdrawalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompleteWithdrawalsFirmCredentials">
+    <wsdl:part name="FirmCredentials" element="tns:FirmCredentials" />
+  </wsdl:message>
+  <wsdl:message name="DisableWithdrawalsSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableWithdrawals" />
+  </wsdl:message>
+  <wsdl:message name="DisableWithdrawalsSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableWithdrawalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableWithdrawalsFirmCredentials">
+    <wsdl:part name="FirmCredentials" element="tns:FirmCredentials" />
+  </wsdl:message>
+  <wsdl:message name="CheckCompletedDepositsSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckCompletedDeposits" />
+  </wsdl:message>
+  <wsdl:message name="CheckCompletedDepositsSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckCompletedDepositsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckCompletedDepositsFirmCredentials">
+    <wsdl:part name="FirmCredentials" element="tns:FirmCredentials" />
+  </wsdl:message>
+  <wsdl:message name="CompleteDepositsSoapIn">
+    <wsdl:part name="parameters" element="tns:CompleteDeposits" />
+  </wsdl:message>
+  <wsdl:message name="CompleteDepositsSoapOut">
+    <wsdl:part name="parameters" element="tns:CompleteDepositsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompleteDepositsFirmCredentials">
+    <wsdl:part name="FirmCredentials" element="tns:FirmCredentials" />
+  </wsdl:message>
+  <wsdl:message name="CheckDepositResult_byTransactionIDSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckDepositResult_byTransactionID" />
+  </wsdl:message>
+  <wsdl:message name="CheckDepositResult_byTransactionIDSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckDepositResult_byTransactionIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckDepositResult_byTransactionIDFirmCredentials">
+    <wsdl:part name="FirmCredentials" element="tns:FirmCredentials" />
+  </wsdl:message>
+  <wsdl:portType name="v2Soap">
+    <wsdl:operation name="CreateWithdrawal_onlyBlokesizHavale">
+      <wsdl:input message="tns:CreateWithdrawal_onlyBlokesizHavaleSoapIn" />
+      <wsdl:output message="tns:CreateWithdrawal_onlyBlokesizHavaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateWithdrawal_onlyHizliPapara">
+      <wsdl:input message="tns:CreateWithdrawal_onlyHizliPaparaSoapIn" />
+      <wsdl:output message="tns:CreateWithdrawal_onlyHizliPaparaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGroupList">
+      <wsdl:input message="tns:getGroupListSoapIn" />
+      <wsdl:output message="tns:getGroupListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBankList">
+      <wsdl:input message="tns:getBankListSoapIn" />
+      <wsdl:output message="tns:getBankListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getWithdrawalStatus">
+      <wsdl:input message="tns:getWithdrawalStatusSoapIn" />
+      <wsdl:output message="tns:getWithdrawalStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDepositStatus">
+      <wsdl:input message="tns:getDepositStatusSoapIn" />
+      <wsdl:output message="tns:getDepositStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDepositLink">
+      <wsdl:input message="tns:CreateDepositLinkSoapIn" />
+      <wsdl:output message="tns:CreateDepositLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDepositLink_Pos">
+      <wsdl:input message="tns:CreateDepositLink_PosSoapIn" />
+      <wsdl:output message="tns:CreateDepositLink_PosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCompletedWithdrawals">
+      <wsdl:input message="tns:CheckCompletedWithdrawalsSoapIn" />
+      <wsdl:output message="tns:CheckCompletedWithdrawalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckWithdrawalResult_byTransactionID">
+      <wsdl:input message="tns:CheckWithdrawalResult_byTransactionIDSoapIn" />
+      <wsdl:output message="tns:CheckWithdrawalResult_byTransactionIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompleteWithdrawals">
+      <wsdl:input message="tns:CompleteWithdrawalsSoapIn" />
+      <wsdl:output message="tns:CompleteWithdrawalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableWithdrawals">
+      <wsdl:input message="tns:DisableWithdrawalsSoapIn" />
+      <wsdl:output message="tns:DisableWithdrawalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCompletedDeposits">
+      <wsdl:input message="tns:CheckCompletedDepositsSoapIn" />
+      <wsdl:output message="tns:CheckCompletedDepositsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompleteDeposits">
+      <wsdl:input message="tns:CompleteDepositsSoapIn" />
+      <wsdl:output message="tns:CompleteDepositsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDepositResult_byTransactionID">
+      <wsdl:input message="tns:CheckDepositResult_byTransactionIDSoapIn" />
+      <wsdl:output message="tns:CheckDepositResult_byTransactionIDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="v2Soap" type="tns:v2Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateWithdrawal_onlyBlokesizHavale">
+      <soap:operation soapAction="http://tempuri.org/CreateWithdrawal_onlyBlokesizHavale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateWithdrawal_onlyBlokesizHavaleFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateWithdrawal_onlyHizliPapara">
+      <soap:operation soapAction="http://tempuri.org/CreateWithdrawal_onlyHizliPapara" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateWithdrawal_onlyHizliPaparaFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGroupList">
+      <soap:operation soapAction="http://tempuri.org/getGroupList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getGroupListFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBankList">
+      <soap:operation soapAction="http://tempuri.org/getBankList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getBankListFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWithdrawalStatus">
+      <soap:operation soapAction="http://tempuri.org/getWithdrawalStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getWithdrawalStatusFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDepositStatus">
+      <soap:operation soapAction="http://tempuri.org/getDepositStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getDepositStatusFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDepositLink">
+      <soap:operation soapAction="http://tempuri.org/CreateDepositLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateDepositLinkFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDepositLink_Pos">
+      <soap:operation soapAction="http://tempuri.org/CreateDepositLink_Pos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateDepositLink_PosFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCompletedWithdrawals">
+      <soap:operation soapAction="http://tempuri.org/CheckCompletedWithdrawals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CheckCompletedWithdrawalsFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckWithdrawalResult_byTransactionID">
+      <soap:operation soapAction="http://tempuri.org/CheckWithdrawalResult_byTransactionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CheckWithdrawalResult_byTransactionIDFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompleteWithdrawals">
+      <soap:operation soapAction="http://tempuri.org/CompleteWithdrawals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CompleteWithdrawalsFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableWithdrawals">
+      <soap:operation soapAction="http://tempuri.org/DisableWithdrawals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DisableWithdrawalsFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCompletedDeposits">
+      <soap:operation soapAction="http://tempuri.org/CheckCompletedDeposits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CheckCompletedDepositsFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompleteDeposits">
+      <soap:operation soapAction="http://tempuri.org/CompleteDeposits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CompleteDepositsFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDepositResult_byTransactionID">
+      <soap:operation soapAction="http://tempuri.org/CheckDepositResult_byTransactionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CheckDepositResult_byTransactionIDFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="v2Soap12" type="tns:v2Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateWithdrawal_onlyBlokesizHavale">
+      <soap12:operation soapAction="http://tempuri.org/CreateWithdrawal_onlyBlokesizHavale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateWithdrawal_onlyBlokesizHavaleFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateWithdrawal_onlyHizliPapara">
+      <soap12:operation soapAction="http://tempuri.org/CreateWithdrawal_onlyHizliPapara" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateWithdrawal_onlyHizliPaparaFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGroupList">
+      <soap12:operation soapAction="http://tempuri.org/getGroupList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getGroupListFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBankList">
+      <soap12:operation soapAction="http://tempuri.org/getBankList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getBankListFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWithdrawalStatus">
+      <soap12:operation soapAction="http://tempuri.org/getWithdrawalStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getWithdrawalStatusFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDepositStatus">
+      <soap12:operation soapAction="http://tempuri.org/getDepositStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getDepositStatusFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDepositLink">
+      <soap12:operation soapAction="http://tempuri.org/CreateDepositLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateDepositLinkFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDepositLink_Pos">
+      <soap12:operation soapAction="http://tempuri.org/CreateDepositLink_Pos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateDepositLink_PosFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCompletedWithdrawals">
+      <soap12:operation soapAction="http://tempuri.org/CheckCompletedWithdrawals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CheckCompletedWithdrawalsFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckWithdrawalResult_byTransactionID">
+      <soap12:operation soapAction="http://tempuri.org/CheckWithdrawalResult_byTransactionID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CheckWithdrawalResult_byTransactionIDFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompleteWithdrawals">
+      <soap12:operation soapAction="http://tempuri.org/CompleteWithdrawals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CompleteWithdrawalsFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableWithdrawals">
+      <soap12:operation soapAction="http://tempuri.org/DisableWithdrawals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DisableWithdrawalsFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCompletedDeposits">
+      <soap12:operation soapAction="http://tempuri.org/CheckCompletedDeposits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CheckCompletedDepositsFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompleteDeposits">
+      <soap12:operation soapAction="http://tempuri.org/CompleteDeposits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CompleteDepositsFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDepositResult_byTransactionID">
+      <soap12:operation soapAction="http://tempuri.org/CheckDepositResult_byTransactionID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CheckDepositResult_byTransactionIDFirmCredentials" part="FirmCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="v2">
+    <wsdl:port name="v2Soap" binding="tns:v2Soap">
+      <soap:address location="https://mapi8867.epara365.com/Services/ExternalApi/v2.asmx" />
+    </wsdl:port>
+    <wsdl:port name="v2Soap12" binding="tns:v2Soap12">
+      <soap12:address location="https://mapi8867.epara365.com/Services/ExternalApi/v2.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

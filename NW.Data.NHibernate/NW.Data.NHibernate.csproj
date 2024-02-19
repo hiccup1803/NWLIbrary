@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0B6F4852-2DF8-4DC0-9714-9AF508E47A40}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NW.Data.NHibernate</RootNamespace>
+    <AssemblyName>NW.Data.NHibernate</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentNHibernate, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentNHibernate.2.0.1.0\lib\net40\FluentNHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NHibernate.4.0.0.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Map\BackOffice\BackOfficeRoleMap.cs" />
+    <Compile Include="Map\BannerMemberReactionMap.cs" />
+    <Compile Include="Map\BannerMap.cs" />
+    <Compile Include="Map\Campaign\ActionTypeMap.cs" />
+    <Compile Include="Map\Campaign\EventCampaignHistoryMap.cs" />
+    <Compile Include="Map\Campaign\EventCampaignMap.cs" />
+    <Compile Include="Map\Campaign\EventHistoryMap.cs" />
+    <Compile Include="Map\Campaign\EventTypeMap.cs" />
+    <Compile Include="Map\Member\DeviceFingerPrintWebhookHistoryMap.cs" />
+    <Compile Include="Map\Member\DeviceFingerPrintMap.cs" />
+    <Compile Include="Map\Member\DeviceFingerPrintWebhookMap.cs" />
+    <Compile Include="Map\Member\IPBlacklistMap.cs" />
+    <Compile Include="Map\Member\IPLoginLog.cs" />
+    <Compile Include="Map\Member\MemberDeviceFingerPrintHistoryMap.cs" />
+    <Compile Include="Map\Member\MemberDeviceFingerPrintMap.cs" />
+    <Compile Include="Map\Payment\BankTransferV2RequestMap.cs" />
+    <Compile Include="Map\Payment\MefeteAccountMap.cs" />
+    <Compile Include="Map\Payment\MefeteTransferMefeteAccountMap.cs" />
+    <Compile Include="Map\Payment\MefeteTransferRequestMap.cs" />
+    <Compile Include="Map\Payment\BankTransferV2BankTransferAccountMap.cs" />
+    <Compile Include="Map\Payment\PaybinRequestMap.cs" />
+    <Compile Include="Map\Payment\ParazulaAccountMap.cs" />
+    <Compile Include="Map\Payment\ParazulaTransferParazulaAccountMap.cs" />
+    <Compile Include="Map\Payment\ParazulaTransferRequestMap.cs" />
+    <Compile Include="Map\Payment\PayfixAccountMap.cs" />
+    <Compile Include="Map\Payment\PayfixTransferPayfixAccountMap.cs" />
+    <Compile Include="Map\Payment\PayfixTransferRequestMap.cs" />
+    <Compile Include="Map\Payment\PEPTransferRequestMap.cs" />
+    <Compile Include="Map\Payment\PEPTransferPEPAccountMap.cs" />
+    <Compile Include="Map\Payment\PEPAccountMap.cs" />
+    <Compile Include="Map\Payment\HeetpayRequestMap.cs" />
+    <Compile Include="Map\Payment\NewBankTransferRequestMap.cs" />
+    <Compile Include="Map\Payment\CMTAccountMap.cs" />
+    <Compile Include="Map\Payment\MGCreditCardRequestMap.cs" />
+    <Compile Include="Map\Payment\NewPaymentProviderMap.cs" />
+    <Compile Include="Map\Payment\QuickbitRequestMap.cs" />
+    <Compile Include="Map\Payment\PaylinkRequestMap.cs" />
+    <Compile Include="Map\Payment\ProviderSettingMap.cs" />
+    <Compile Include="Map\Payment\CMTTransferCMTAccountMap.cs" />
+    <Compile Include="Map\Payment\CMTTransferRequestMap.cs" />
+    <Compile Include="Map\Payment\ReyPayCMTRequestMap.cs" />
+    <Compile Include="Map\ProviderMap.cs" />
+    <Compile Include="Map\ProviderTypeMap.cs" />
+    <Compile Include="Map\ProviderSettingMap.cs" />
+    <Compile Include="Map\Company\CompanyBackOfficeDomainMap.cs" />
+    <Compile Include="Map\Company\CompanyMap.cs" />
+    <Compile Include="Map\ContentPageMap.cs" />
+    <Compile Include="Map\Company\CompanyDomainMap.cs" />
+    <Compile Include="Map\Company\CompanySettingMap.cs" />
+    <Compile Include="Map\BackOffice\PowerUserMap.cs" />
+    <Compile Include="Map\CustomStuffMap.cs" />
+    <Compile Include="Map\DepositBonusHistoryMap.cs" />
+    <Compile Include="Map\Game\CategoryMap.cs" />
+    <Compile Include="Map\Game\CategoryTemplateMap.cs" />
+    <Compile Include="Map\Game\CountryMap.cs" />
+    <Compile Include="Map\Game\GameCategoryMap.cs" />
+    <Compile Include="Map\Game\GameDetailMap.cs" />
+    <Compile Include="Map\Game\GameMap.cs" />
+    <Compile Include="Map\LanguageMap.cs" />
+    <Compile Include="Map\Marketing\AnnotationMap.cs" />
+    <Compile Include="Map\Marketing\BannerAnnotationMap.cs" />
+    <Compile Include="Map\Marketing\FAQMap.cs" />
+    <Compile Include="Map\Marketing\EmailAccountMap.cs" />
+    <Compile Include="Map\Marketing\MarketingBannerMap.cs" />
+    <Compile Include="Map\Marketing\MarketingBannerSizeItemMap.cs" />
+    <Compile Include="Map\Marketing\MarketingBannerSizeMap.cs" />
+    <Compile Include="Map\Marketing\OptimoveTemplateMap.cs" />
+    <Compile Include="Map\Marketing\TemplateMap.cs" />
+    <Compile Include="Map\Marketing\CampaignMap.cs" />
+    <Compile Include="Map\Marketing\ContentPageMap.cs" />
+    <Compile Include="Map\Marketing\TournamentGameMap.cs" />
+    <Compile Include="Map\Marketing\TournamentMap.cs" />
+    <Compile Include="Map\Member\AffiliateTypeMap.cs" />
+    <Compile Include="Map\Member\LevelAttributeMap.cs" />
+    <Compile Include="Map\Member\LevelMap.cs" />
+    <Compile Include="Map\Member\MemberPasscodeMap.cs" />
+    <Compile Include="Map\Member\MemberLoginLogoutMap.cs" />
+    <Compile Include="Map\Member\MemberTrackingMap.cs" />
+    <Compile Include="Map\Member\Member2.cs" />
+    <Compile Include="Map\Member\MemberLoginCodeMap.cs" />
+    <Compile Include="Map\Member\MemberNotificationMap.cs" />
+    <Compile Include="Map\Member\MemberCandidateMap.cs" />
+    <Compile Include="Map\Member\MemberDeviceTokenMap.cs" />
+    <Compile Include="Map\Member\MemberConnectionMap.cs" />
+    <Compile Include="Map\Member\MemberDetailMap.cs" />
+    <Compile Include="Map\Member\MemberGameHistoryMap.cs" />
+    <Compile Include="Map\Member\MemberMap.cs" />
+    <Compile Include="Map\Member\MemberPhoneVerificationMap.cs" />
+    <Compile Include="Map\Member\MemberReportMap.cs" />
+    <Compile Include="Map\Messaging\MessageMap.cs" />
+    <Compile Include="Map\Messaging\MessageTemplateMap.cs" />
+    <Compile Include="Map\Messaging\MessageTopicMap.cs" />
+    <Compile Include="Map\Payment\GenericDepositRequestMap.cs" />
+    <Compile Include="Map\Payment\PaparaTransferRequestMap.cs" />
+    <Compile Include="Map\Payment\BPCPaymentMethodTypeMap.cs" />
+    <Compile Include="Map\Payment\BPCRequestMap.cs" />
+    <Compile Include="Map\Payment\CashlinkRequestMap.cs" />
+    <Compile Include="Map\Payment\CubitsRequestMap.cs" />
+    <Compile Include="Map\Payment\JetRequestMap.cs" />
+    <Compile Include="Map\Payment\KingCommunityBankTransferRequestMap.cs" />
+    <Compile Include="Map\Payment\KingQRDepositRequestMap.cs" />
+    <Compile Include="Map\Payment\MemberDisabledPaymentMethodMap.cs" />
+    <Compile Include="Map\Payment\PaparaAccountMap.cs" />
+    <Compile Include="Map\Payment\PaparaTransferPaparaAccountMap.cs" />
+    <Compile Include="Map\Payment\PayKasaTransactionMap.cs" />
+    <Compile Include="Map\Payment\PayminoRequestMap2.cs" />
+    <Compile Include="Map\Payment\PayminoRequestMap.cs" />
+    <Compile Include="Map\Payment\RejectedBinMap.cs" />
+    <Compile Include="Map\Payment\BankAccountMap.cs" />
+    <Compile Include="Map\Payment\BankMap.cs" />
+    <Compile Include="Map\Payment\BankTransferBankAccountMap.cs" />
+    <Compile Include="Map\Payment\BankTransferRequestMap.cs" />
+    <Compile Include="Map\Payment\CepBankMap.cs" />
+    <Compile Include="Map\Payment\CepBankRequestMap.cs" />
+    <Compile Include="Map\Payment\AstroPayRequestMap.cs" />
+    <Compile Include="Map\Payment\EcoPayzRequestMap.cs" />
+    <Compile Include="Map\Payment\CurrencyRate.cs" />
+    <Compile Include="Map\Payment\CurrencyUpdateMap.cs" />
+    <Compile Include="Map\Payment\CurrencyMap.cs" />
+    <Compile Include="Map\Payment\CreditCardResponseMap.cs" />
+    <Compile Include="Map\Payment\CreditCardRequestMap.cs" />
+    <Compile Include="Map\Payment\CreditCardMap.cs" />
+    <Compile Include="Map\Member\TrackMap.cs" />
+    <Compile Include="Map\Payment\OtoPayTransactionMap.cs" />
+    <Compile Include="Map\Payment\WithdrawRequestBankTransferMap.cs" />
+    <Compile Include="Map\Promotion\PromotionMap.cs" />
+    <Compile Include="Map\ResourceMap.cs" />
+    <Compile Include="Map\Tag\GameTagMap.cs" />
+    <Compile Include="Map\Tag\MemberSegmentCronRunHistoryMap.cs" />
+    <Compile Include="Map\Tag\MemberSegmentMemberMap.cs" />
+    <Compile Include="Map\Tag\MemberSegmentMap.cs" />
+    <Compile Include="Map\Tag\MemberTagFilterMap.cs" />
+    <Compile Include="Map\Tag\MemberTagMap.cs" />
+    <Compile Include="Map\Tag\TagMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CategoryRepository.cs" />
+    <Compile Include="Repositories\CompanyDomainRepository.cs" />
+    <Compile Include="Repositories\DeviceFingerPrintRepository.cs" />
+    <Compile Include="Repositories\MemberDeviceFingerPrintRepository.cs" />
+    <Compile Include="Repositories\ProviderSettingRepository.cs" />
+    <Compile Include="Repositories\FAQRepository.cs" />
+    <Compile Include="Repositories\ContentPageRepository.cs" />
+    <Compile Include="Repositories\CompanySettingRepository.cs" />
+    <Compile Include="Repositories\EmailAccountRepository.cs" />
+    <Compile Include="Repositories\GameCategoryRepository.cs" />
+    <Compile Include="Repositories\GameRepository.cs" />
+    <Compile Include="Repositories\LevelRepository.cs" />
+    <Compile Include="Repositories\MemberDetailRepository.cs" />
+    <Compile Include="Repositories\MemberRepository.cs" />
+    <Compile Include="Repositories\Payment\CreditCardRepository.cs" />
+    <Compile Include="Repositories\Payment\CreditCardResponseRepository.cs" />
+    <Compile Include="Repositories\Payment\CreditCardRequestRepository.cs" />
+    <Compile Include="Repositories\Promotion\PromotionRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Work\UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NW.Core\NW.Core.csproj">
+      <Project>{aa9d564e-1ee5-4c45-acca-e1facf1102a2}</Project>
+      <Name>NW.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
